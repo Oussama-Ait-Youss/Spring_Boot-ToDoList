@@ -1,13 +1,13 @@
-package com.MUFASA.TODO_LIST;
+package com.todo_list.todoapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TodoListApplication {
+public class TodoappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TodoListApplication.class, args);
+		SpringApplication.run(TodoappApplication.class, args);
 	}
 
 }

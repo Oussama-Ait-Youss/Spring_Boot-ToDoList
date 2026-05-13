@@ -1,10 +1,10 @@
-package com.MUFASA.TODO_LIST;
+package com.todo_list.todoapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TodoListApplicationTests {
+class TodoappApplicationTests {
 
 	@Test
 	void contextLoads() {

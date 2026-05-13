@@ -1,12 +1,21 @@
 package com.todo_list.todoapp.service;
 
+import com.todo_list.todoapp.model.Todo;
+import com.todo_list.todoapp.repository.TodoRepository;
+import java.util.List;
+import org.springframework.stereotype.Service;
 
 
 
-public class TodoService{
 
+@Service
+public class TodoService {
 
-    private TodoRepository repository;
+    private final TodoRepository repository;
+
+    public TodoService(TodoRepository repository) {
+        this.repository = repository;
+    }
 
 
 
@@ -19,7 +28,8 @@ public class TodoService{
     }
 
     public Todo findById(Long id) {
-        return repository.findById(id);
+        return repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Todo not found: " + id));
     }
 
     public void delete(Long id) {

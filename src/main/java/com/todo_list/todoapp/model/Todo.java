@@ -1,45 +1,47 @@
 package com.todo_list.todoapp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
+public class Todo {
 
-public class Todo{
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private boolean completed = false;
 
+    public Todo() {}
 
-    public Todo(){}
-
-
-    public Todo(int id , String title){
+    public Todo(Long id, String title) {
         this.id = id;
         this.title = title;
     }
 
+    public Long getId() {
+        return this.id;
+    }
 
-
-    // setters
-    public void setId(int id){
+    public void setId(Long id) {
         this.id = id;
     }
-    public void setTitle(String title){
-        this.title = title;
-    }
-    public void setCompleted(boolean completed){
-        this.completed = completed;
-    }
 
-
-    // getters
-    public String getTitle(){
+    public String getTitle() {
         return this.title;
     }
 
-    public int getId(){
-        return this.id;
+    public void setTitle(String title) {
+        this.title = title;
     }
-    public boolean getcompleted(){
+
+    public boolean isCompleted() {
         return this.completed;
     }
 
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
 }
